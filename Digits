@@ -1,0 +1,41 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int AddNumbers(int response);
+
+int main()
+{
+	int response = 0;
+
+	while (response != 0);
+	{
+		cout << "Please enter an integer (0 to quit): ";
+		cin >> response;
+		
+		int total;
+
+		if (response != 0)
+		{
+			total = AddNumbers(response);
+			cout << "The sume of the digits of " << response << "is " << total << endl;
+		}
+	} 
+
+	cout << "Goodbye" << endl;
+	
+	return 0;	
+}
+
+int AddNumbers(int response)
+{
+	int sum = 0;
+
+	while (response > 0)
+	{
+		sum += response % 10;
+		response = response / 10;
+	}
+	return sum;
+}
